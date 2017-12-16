@@ -32,16 +32,16 @@ namespace Assets.Scripts
         public void StartVisualize()
         {
             //works like a loop
-            mover.ReachedTarget += TryGoNext; 
+            mover.ReachedTarget += TryGoNext;
             mover.ReachedTarget -= ReachedCheese;
             currentWayPointID = -1;
             mover.mouseGO.SetActive(true);
             mover.PrepareMovement(startMousePoint);
             TryGoNext();
         }
-        
+
         //TODO: Добавить в классы Mouse и Cat метод PrintAsWinner (или Visitor сделать)
-        public void PrintWinner(PlayerType type) 
+        public void PrintWinner(PlayerType type)
         {
             if (type == PlayerType.CAT)
             {

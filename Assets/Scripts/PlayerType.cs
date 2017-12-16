@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-	public enum PlayerType
-	{
-		CAT,
-		MOUSE
-	}
+    public enum PlayerType
+    {
+        CAT,
+        MOUSE
+    }
 }

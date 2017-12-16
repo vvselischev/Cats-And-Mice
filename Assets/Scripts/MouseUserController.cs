@@ -12,18 +12,18 @@ namespace Assets.Scripts
         public CheckeredBoard board;
 
         public PlayGameState PlayState;
-		public BoardStorage storage;
-		public GameInventory MouseGameInventory;
+        public BoardStorage storage;
+        public GameInventory MouseGameInventory;
 
-		public StartButton startButton;
+        public StartButton startButton;
 
         public void Disable()
         {
             enabled = false;
-            
+
             foreach (WayPoint wayPoint in trajectory.path)
             {
-                wayPoint.mouseButton.ResetColor();    
+                wayPoint.mouseButton.ResetColor();
             }
             DisableTrajectoryEnter();
         }
@@ -31,7 +31,7 @@ namespace Assets.Scripts
         public void DisableTrajectoryEnter()
         {
             var buttons = FindObjectsOfType(typeof(Button));
-            foreach (Button button in buttons.Cast<Button>().Where(button => 
+            foreach (Button button in buttons.Cast<Button>().Where(button =>
                 button.GetComponent<MouseButton>() != null))
             {
                 button.gameObject.GetComponent<MouseButton>().Disable();
@@ -41,7 +41,7 @@ namespace Assets.Scripts
         public void EnableTrajectoryEnter()
         {
             var buttons = FindObjectsOfType(typeof(Button));
-            foreach (Button button in buttons.Cast<Button>().Where(button => 
+            foreach (Button button in buttons.Cast<Button>().Where(button =>
                 button.GetComponent<MouseButton>() != null))
             {
                 button.gameObject.GetComponent<MouseButton>().Enable();
@@ -55,15 +55,15 @@ namespace Assets.Scripts
             EnableTrajectoryEnter();
         }
 
-		private void LockStartButton ()
-		{
-			startButton.Lock ();
-		}
+        private void LockStartButton()
+        {
+            startButton.Lock();
+        }
 
-		private void UnlockStartButton ()
-		{
-			startButton.Unlock ();
-		}
+        private void UnlockStartButton()
+        {
+            startButton.Unlock();
+        }
 
         public void FinishTurn()
         {
@@ -76,21 +76,21 @@ namespace Assets.Scripts
         void Awake()
         {
             trajectory = new Trajectory(new Vector2(board.width, board.height));
-			trajectory.OnChanged += TrajectoryChanged;
-			storage.SetTrajectory (trajectory);
+            trajectory.OnChanged += TrajectoryChanged;
+            storage.SetTrajectory(trajectory);
         }
 
-		private void TrajectoryChanged()
-		{
-			if (trajectory.Finished ()) 
-			{
-				UnlockStartButton ();
-			} 
-			else 
-			{
-				LockStartButton ();
-			}
-		}
+        private void TrajectoryChanged()
+        {
+            if (trajectory.Finished())
+            {
+                UnlockStartButton();
+            }
+            else
+            {
+                LockStartButton();
+            }
+        }
 
         public bool TryAddButton(MouseButton mouseButton)
         {
@@ -108,14 +108,14 @@ namespace Assets.Scripts
         }
 
 
-		public GameInventory GetInventory()
-		{
-			return MouseGameInventory;
-		}
+        public GameInventory GetInventory()
+        {
+            return MouseGameInventory;
+        }
 
-		public BonusOwner GetOwner()
-		{
-			return BonusOwner.MOUSE;
-		}
+        public BonusOwner GetOwner()
+        {
+            return BonusOwner.MOUSE;
+        }
     }
 }

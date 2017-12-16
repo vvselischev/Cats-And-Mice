@@ -11,7 +11,7 @@ namespace Assets.Scripts
     {
         public PlayGameState playState;
         public CheckeredBoard board;
-		public GameInventory CatGameInventory;
+        public GameInventory CatGameInventory;
 
         public void FinishTurn()
         {
@@ -27,7 +27,7 @@ namespace Assets.Scripts
         public void Enable()
         {
             //var buttons = FindObjectsOfType(typeof(Button));
-           
+
             enabled = true;
         }
 
@@ -41,14 +41,14 @@ namespace Assets.Scripts
             //throw new NotImplementedException();
         }
 
-		public GameInventory GetInventory()
-		{
-			return CatGameInventory;
-		}
+        public GameInventory GetInventory()
+        {
+            return CatGameInventory;
+        }
 
-		public BonusOwner GetOwner()
-		{
-			return BonusOwner.CAT;
-		}
+        public BonusOwner GetOwner()
+        {
+            return BonusOwner.CAT;
+        }
     }
 }

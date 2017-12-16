@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-	public class WayPoint
+    public class WayPoint
     {
         public int number;
         public MouseButton mouseButton;

@@ -25,8 +25,6 @@ namespace Assets.Scripts
             boardButtons = new Button[width + 1, height + 1];
             //Debug.Log(PatternButtonGO.GetComponent<RectTransform>().position);
             CreateButtons();
-
-            
         }
 
         public void EnableBoard()
@@ -73,7 +71,7 @@ namespace Assets.Scripts
             {
                 for (int currentColumn = 1; currentColumn <= width; currentColumn++)
                 {
-                    
+
 
                     Button patternButton = PatternButtonGO.GetComponent<Button>();
                     float buttonWidth = patternButton.GetComponent<RectTransform>().rect.width;
@@ -86,8 +84,8 @@ namespace Assets.Scripts
 
                     Button newButton = Instantiate(patternButton);
                     RectTransform rectTransform = newButton.GetComponent<RectTransform>();
-                    
-                    
+
+
 
                     rectTransform.rect.size.Set(buttonWidth, buttonHeight);
 
@@ -114,4 +112,3 @@ namespace Assets.Scripts
         }
     }
 }
-

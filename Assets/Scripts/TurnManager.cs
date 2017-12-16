@@ -20,7 +20,7 @@ namespace Assets.Scripts
 
         public GameObject MouseUI;
         public GameObject CatUI;
-		public GameObject RoundUI;
+        public GameObject RoundUI;
 
         public GameObject mouseMover;
         public GameObject MouseIcon;
@@ -67,15 +67,15 @@ namespace Assets.Scripts
             controllerManager.EnableCatController();
         }
 
-		private void EnableRound()
-		{
-			RoundUI.SetActive(true);
-		}
+        private void EnableRound()
+        {
+            RoundUI.SetActive(true);
+        }
 
-		private void DisableRound()
-		{
-			RoundUI.SetActive(false);
-		}
+        private void DisableRound()
+        {
+            RoundUI.SetActive(false);
+        }
 
         public void SetTurn(TurnType turn)
         {
@@ -83,13 +83,13 @@ namespace Assets.Scripts
             controllerManager.SetCurrentController(turn);
             if (turn == TurnType.MOUSE)
             {
-				EnableRound();
+                EnableRound();
                 DisableCat();
                 EnableMouse();
             }
             else if (turn == TurnType.CAT)
             {
-				EnableRound();
+                EnableRound();
                 DisableMouse();
                 EnableCat();
             }
@@ -97,7 +97,7 @@ namespace Assets.Scripts
             {
                 DisableCat();
                 DisableMouse();
-				DisableRound();
+                DisableRound();
             }
         }
 

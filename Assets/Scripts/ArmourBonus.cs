@@ -22,11 +22,11 @@ namespace Assets.Scripts
 
         public void Execute()
         {
-            
+
         }
 
         public void OnTake()
-        {   
+        {
         }
 
         public Image GetBonusImage()
@@ -37,21 +37,20 @@ namespace Assets.Scripts
         public BonusType GetBonusType()
         {
             return BonusType.ARMOUR;
-        } 
+        }
 
-		public BonusOwner GetOwner()
-		{
-			return BonusOwner.MOUSE;
-		}
+        public BonusOwner GetOwner()
+        {
+            return BonusOwner.MOUSE;
+        }
 
-		public void DropOnBoard(BoardButton boardButton)
-		{
+        public void DropOnBoard(BoardButton boardButton)
+        {
+        }
 
-		}
-
-		public bool CanHoldInStorage()
-		{
-			return true;
-		}
+        public bool CanHoldInStorage()
+        {
+            return true;
+        }
     }
 }

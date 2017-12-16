@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-	public class InventoryItem : MonoBehaviour
-	{
-		public BonusType type;
-		public int count;
-	}
+    public class InventoryItem : MonoBehaviour
+    {
+        public BonusType type;
+        public int count;
+    }
 }

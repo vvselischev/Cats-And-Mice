@@ -14,7 +14,7 @@ namespace Assets.Scripts
         public TurnManager turnManager;
         public TimerManager timerManager;
         public RoundJudge roundJudge;
-		public BonusManager bonusManager;
+        public BonusManager bonusManager;
         public RoundScore roundScore;
 
         private int currentRound = 0;
@@ -34,7 +34,7 @@ namespace Assets.Scripts
 
         public void InitNewRound()
         {
-			bonusManager.Reset();
+            bonusManager.Reset();
             turnManager.InitRound();
             turnsLeft = 0;
             currentRound++;
@@ -47,14 +47,14 @@ namespace Assets.Scripts
                 //end game
                 return;
             }
-            
+
             if (currentRound == 1)
             {
                 turnManager.SetTurn(GetFirstTurn());
             }
             else if (currentRound > 1)
             {
-                turnManager.SetNextTurn();    
+                turnManager.SetNextTurn();
             }
 
             timerManager.StartTimer();
@@ -63,7 +63,7 @@ namespace Assets.Scripts
         public void OnFinishTurn(TurnType finishedType)
         {
             Debug.Log("Finished turn");
-			bonusManager.Reset();
+            bonusManager.Reset();
             ChangeTurn();
         }
 

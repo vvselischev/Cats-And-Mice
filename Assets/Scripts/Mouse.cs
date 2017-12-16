@@ -15,7 +15,7 @@ namespace Assets.Scripts
         {
             bonuses = new List<IBonus>();
         }
-        
+
         public void AddBonus(IBonus bonus)
         {
             if (bonus != null)

@@ -15,7 +15,7 @@ namespace Assets.Scripts
         {
             if (HasBonus(bonus))
             {
-                if (bonusManager.HasActiveBonus() && 
+                if (bonusManager.HasActiveBonus() &&
                     bonusManager.ActiveBonus.GetBonusType() == bonus)
                 {
                     bonusManager.PutAway();

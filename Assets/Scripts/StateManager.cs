@@ -15,12 +15,12 @@ namespace Assets.Scripts
 
         public StartGameState StartState;
         public PlayGameState PlayState;
-        private static Dictionary<StateType, IGameState> states; 
+        private static Dictionary<StateType, IGameState> states;
 
         void Awake()
         {
             Debug.Log("Start");
-            
+
             Initialize();
             ChangeState(StateType.START_GAME_STATE);
         }

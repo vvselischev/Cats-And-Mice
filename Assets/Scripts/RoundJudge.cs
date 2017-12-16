@@ -6,13 +6,13 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-	public class RoundJudge : MonoBehaviour
-	{
-		public BoardStorage storage;
-		private static RoundJudge instance;
-		public Mouse mouse;
-		public RoundVisualizer visualizer;
-		public PlayGameState playGameState;
+    public class RoundJudge : MonoBehaviour
+    {
+        public BoardStorage storage;
+        private static RoundJudge instance;
+        public Mouse mouse;
+        public RoundVisualizer visualizer;
+        public PlayGameState playGameState;
         public PlayerType winner;
         public VoidHandler OnFinishJudge;
 
@@ -32,17 +32,17 @@ namespace Assets.Scripts
         }
 
         public static RoundJudge GetInstance()
-		{
-			return instance;
-		}
+        {
+            return instance;
+        }
 
-		public void Awake()
-		{
-			instance = this;
-			visualizer.MovedToNextPoint += CheckWayPoint;
-			visualizer.ReachedCheese += MouseWin;
+        public void Awake()
+        {
+            instance = this;
+            visualizer.MovedToNextPoint += CheckWayPoint;
+            visualizer.ReachedCheese += MouseWin;
             visualizer.FinishedLerp += FinishVisualize;
-		}
+        }
 
         private void FinishVisualize()
         {
@@ -50,47 +50,47 @@ namespace Assets.Scripts
             OnFinishJudge();
         }
 
-		public void CheckWayPoint()
-		{
-			int id = visualizer.currentWayPointID;
-			WayPoint currentWayPoint = storage.trajectory.path[id];
-			int boardX = currentWayPoint.mouseButton.boardButton.boardX;
-			int boardY = currentWayPoint.mouseButton.boardButton.boardY;
-			List<BoardStorageItem> bonuses = new List<BoardStorageItem>();
-			bonuses = storage.boardTable[boardX, boardY];
+        public void CheckWayPoint()
+        {
+            int id = visualizer.currentWayPointID;
+            WayPoint currentWayPoint = storage.trajectory.path[id];
+            int boardX = currentWayPoint.mouseButton.boardButton.boardX;
+            int boardY = currentWayPoint.mouseButton.boardButton.boardY;
+            List<BoardStorageItem> bonuses = new List<BoardStorageItem>();
+            bonuses = storage.boardTable[boardX, boardY];
 
-            
-			foreach (BoardStorageItem item in bonuses)
-			{
+
+            foreach (BoardStorageItem item in bonuses)
+            {
                 needContinue = true;
-				item.bonus.Execute();
-                
+                item.bonus.Execute();
+
                 //Чтобы не перебирать, если убились
                 if (!needContinue)
                 {
                     break;
                 }
-			}
-		}
+            }
+        }
 
-		public void MouseWin()
-		{
+        public void MouseWin()
+        {
             winner = PlayerType.MOUSE;
             FinishJudge();
-		}
+        }
 
-		public void TryToKill()
-		{
-			if (!mouse.IsArmoured()) //can kill
-			{
+        public void TryToKill()
+        {
+            if (!mouse.IsArmoured()) //can kill
+            {
                 mouse.Kill();
                 winner = PlayerType.CAT;
                 FinishJudge();
-			}
-			else //can't kill
-			{
+            }
+            else //can't kill
+            {
                 //TODO: some effect
-			}
-		}
+            }
+        }
     }
 }

@@ -5,16 +5,15 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts
 {
-	public class BoardStorageItem
-	{
-		public IBonus bonus;
-		public BoardButton boardButton;
+    public class BoardStorageItem
+    {
+        public IBonus bonus;
+        public BoardButton boardButton;
 
-		public BoardStorageItem (BoardButton boardButton, IBonus bonus)
-		{
-			this.bonus = bonus;
-			this.boardButton = boardButton;
-		}
-	}
+        public BoardStorageItem(BoardButton boardButton, IBonus bonus)
+        {
+            this.bonus = bonus;
+            this.boardButton = boardButton;
+        }
+    }
 }
-

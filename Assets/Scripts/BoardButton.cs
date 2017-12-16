@@ -14,7 +14,7 @@ namespace Assets.Scripts
         [NonSerialized]
         public Button button;
 
-		public GameIcon icon;
+        public GameIcon icon;
 
         public BonusManager bonusManager;
 
@@ -28,7 +28,7 @@ namespace Assets.Scripts
         public void OnClick()
         {
             Debug.Log("Board button clicked");
-			bonusManager.OnBoardClick (this);
+            bonusManager.OnBoardClick(this);
         }
 
         public void Enable()

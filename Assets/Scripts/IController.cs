@@ -10,7 +10,7 @@ namespace Assets.Scripts
         void Enable();
         void OnBonusTaken();
         void OnBonusRemoveFromHand();
-		GameInventory GetInventory();
-		BonusOwner GetOwner();
+        GameInventory GetInventory();
+        BonusOwner GetOwner();
     }
 }

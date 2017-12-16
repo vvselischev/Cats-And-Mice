@@ -27,7 +27,8 @@ namespace Assets.Scripts
             {
                 fraction += velocity / direction.magnitude * Time.deltaTime;
                 //gameObject.GetComponent<RectTransform>().localPosition += direction * Time.deltaTime;
-                gameObject.GetComponent<RectTransform>().localPosition = Vector3.Lerp(startPosition, targetPosition, fraction);
+                gameObject.GetComponent<RectTransform>().localPosition =
+                    Vector3.Lerp(startPosition, targetPosition, fraction);
                 yield return null;
             }
             ReachedTarget();
